@@ -11,26 +11,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var checkLabel: UILabel?
+    @IBOutlet private weak var checkLabel: UILabel?
     
-    @IBOutlet var valueViewsArray: [UIView]?
-    @IBOutlet var valueLabelsArray: [UILabel]?
-    @IBOutlet var valueButtonsArray: [UIButton]?
+    @IBOutlet private var valueViewsArray: [UIView]?
+    @IBOutlet private var valueLabelsArray: [UILabel]?
+    @IBOutlet private var valueButtonsArray: [UIButton]?
     
-    @IBOutlet var functionalViewsArray: [UIView]?
-    @IBOutlet var functionalLabelsArray: [UILabel]?
-    let functionalTexts = ["=","+", "-", "x", ":"]
-    @IBOutlet var functionalButtonsArray: [UIButton]?
+    @IBOutlet private var functionalViewsArray: [UIView]?
+    @IBOutlet private var functionalLabelsArray: [UILabel]?
+    @IBOutlet private var functionalButtonsArray: [UIButton]?
     
-    @IBOutlet var additionalFunctionalViewsArray: [UIView]?
-    @IBOutlet var additionalFunctionalLabelsArray: [UILabel]?
-    var additionalFunctionalTexts = ["AC", "+/-", "%"]
-    @IBOutlet var additionalFunctionalButtonsArray: [UIButton]?
+    @IBOutlet private var additionalFunctionalViewsArray: [UIView]?
+    @IBOutlet private var additionalFunctionalLabelsArray: [UILabel]?
+    @IBOutlet private var additionalFunctionalButtonsArray: [UIButton]?
     
-    @IBOutlet weak var commaView: UIView?
-    @IBOutlet weak var commaLabel: UILabel?
-    @IBOutlet weak var commaButton: UIButton?
-    
+    @IBOutlet private weak var commaView: UIView?
+    @IBOutlet private weak var commaLabel: UILabel?
+    @IBOutlet private weak var commaButton: UIButton?
+        
+    private let functionalTexts = ["=","+", "-", "x", ":"]
+    private var additionalFunctionalTexts = ["AC", "+/-", "%"]
+    private var allButtons: [UIButton]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +40,20 @@ class ViewController: UIViewController {
     
         checkLabel?.text = "0"
         
-        paintViewButtons()
         addValuesButtons()
+        commaButton?.addTarget(self, action: #selector(tapComma), for: .touchUpInside)
     }
     
-    func paintViewButtons() {
+    @objc func tapComma() {
+        print("1")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        paintViewButtons()
+    }
+    
+    private func paintViewButtons() {
         valueViewsArray?.forEach({ view in
             view.backgroundColor = .systemGray5
             view.layer.cornerRadius = view.frame.height / 2
@@ -64,10 +74,15 @@ class ViewController: UIViewController {
         commaView.layer.cornerRadius = commaView.frame.height / 2
     }
     
-    func addValuesButtons() {
+    private func addValuesButtons() {
         guard let valueLabelsArray = valueLabelsArray,
               let functionalLabelsArray = functionalLabelsArray,
-              let additionalFunctionalLabelsArray = additionalFunctionalLabelsArray else { return }
+              let additionalFunctionalLabelsArray = additionalFunctionalLabelsArray,
+              let valueButtonsArray = valueButtonsArray,
+              let functionalButtonsArray = functionalButtonsArray,
+              let additionalFunctionalButtonsArray = additionalFunctionalButtonsArray,
+              let commaButton = commaButton
+        else { return }
         
         for i in 0...valueLabelsArray.count - 1 {
             valueLabelsArray[i].text = "\(i)"
@@ -85,21 +100,26 @@ class ViewController: UIViewController {
             additionalFunctionalLabelsArray[i].font = .boldSystemFont(ofSize: 35)
             additionalFunctionalLabelsArray[i].textColor = .black
         }
-        
+ 
         commaLabel?.text = ","
         commaLabel?.font = .systemFont(ofSize: 40)
-    }
-    
-    func addActionsButtons() {
-        guard let valueButtonsArray = valueButtonsArray else { return }
-        for i in 0...valueButtonsArray.count - 1 {
-            valueButtonsArray[i].addTarget(self, action: #selector(addNumber), for: .touchUpInside)
+        
+        allButtons = valueButtonsArray + functionalButtonsArray + additionalFunctionalButtonsArray
+        allButtons?.append(commaButton)
+        
+        allButtons?.forEach { button in
+            button.titleLabel?.text = nil
         }
     }
     
-    @objc func addNumber() {
+    override func addChild(_ childController: UIViewController) {
         
     }
+    
+    @IBAction func tap0(_ sender: Any) {
+        print("1")
+    }
+    
     
 }
 
