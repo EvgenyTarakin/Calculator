@@ -7,25 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0034BA274AC6B0003C4598 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0034B9274AC6B0003C4598 /* HistoryViewController.swift */; };
+		1B175B1C2742199A00DA9383 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B175B1B2742199A00DA9383 /* Calculator.swift */; };
+		1B1BD98E2753F03200995DF1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1BD98D2753F03200995DF1 /* DataManager.swift */; };
 		1B3D0A0327301BDB008CA5F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0227301BDB008CA5F7 /* AppDelegate.swift */; };
 		1B3D0A0527301BDB008CA5F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0427301BDB008CA5F7 /* SceneDelegate.swift */; };
-		1B3D0A0727301BDB008CA5F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0627301BDB008CA5F7 /* ViewController.swift */; };
-		1B3D0A0A27301BDB008CA5F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0827301BDB008CA5F7 /* Main.storyboard */; };
+		1B3D0A0727301BDB008CA5F7 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0627301BDB008CA5F7 /* CalculatorViewController.swift */; };
 		1B3D0A0C27301BDD008CA5F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0B27301BDD008CA5F7 /* Assets.xcassets */; };
 		1B3D0A0F27301BDD008CA5F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0D27301BDD008CA5F7 /* LaunchScreen.storyboard */; };
 		1B3D0A17273021E3008CA5F7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A16273021E3008CA5F7 /* CustomButton.swift */; };
+		1B3FEE9A274398D500C2678D /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FEE99274398D500C2678D /* ExtensionString.swift */; };
+		1B3FEEC6274750DD00C2678D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FEEC3274750DD00C2678D /* TableViewCell.swift */; };
+		1B7C2CC4273B9574006555E8 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C2CC3273B9574006555E8 /* CustomLabel.swift */; };
+		1B7C2CC9273B9EDA006555E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7C2CC8273B9EDA006555E8 /* SnapKit */; };
+		1B8A39222755D407008339F8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39212755D407008339F8 /* CoreDataManager.swift */; };
+		1B8A39252755DB80008339F8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */; };
+		1BA74DFB2762503700C05595 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFA2762503700C05595 /* CalculatorPresenter.swift */; };
+		1BA74DFD2762504300C05595 /* CalculatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFC2762504300C05595 /* CalculatorInteractor.swift */; };
+		1BA74DFF2762505500C05595 /* CalculatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFE2762505500C05595 /* CalculatorRouter.swift */; };
+		1BA74E012762506300C05595 /* CalculatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E002762506300C05595 /* CalculatorConfigurator.swift */; };
+		1BA74E04276269A200C05595 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E03276269A200C05595 /* Section.swift */; };
+		1BA74E0627626B6A00C05595 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E0527626B6A00C05595 /* HistoryPresenter.swift */; };
+		1BA74E0827626B7400C05595 /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E0727626B7400C05595 /* HistoryInteractor.swift */; };
+		1BA74E0A27626B8400C05595 /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E0927626B8400C05595 /* HistoryRouter.swift */; };
+		1BA74E0C27626B9A00C05595 /* HistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74E0B27626B9A00C05595 /* HistoryConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0034B9274AC6B0003C4598 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		1B175B1B2742199A00DA9383 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		1B1BD98D2753F03200995DF1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1B3D09FF27301BDB008CA5F7 /* Сalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Сalculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3D0A0227301BDB008CA5F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3D0A0427301BDB008CA5F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B3D0A0627301BDB008CA5F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1B3D0A0927301BDB008CA5F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B3D0A0627301BDB008CA5F7 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		1B3D0A0B27301BDD008CA5F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3D0A0E27301BDD008CA5F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3D0A1027301BDD008CA5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3D0A16273021E3008CA5F7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1B3FEE99274398D500C2678D /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		1B3FEEC3274750DD00C2678D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1B7C2CC3273B9574006555E8 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		1B8A39212755D407008339F8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1B8A39242755DB80008339F8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1BA74DFA2762503700C05595 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		1BA74DFC2762504300C05595 /* CalculatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractor.swift; sourceTree = "<group>"; };
+		1BA74DFE2762505500C05595 /* CalculatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorRouter.swift; sourceTree = "<group>"; };
+		1BA74E002762506300C05595 /* CalculatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfigurator.swift; sourceTree = "<group>"; };
+		1BA74E03276269A200C05595 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		1BA74E0527626B6A00C05595 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		1BA74E0727626B7400C05595 /* HistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
+		1BA74E0927626B8400C05595 /* HistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
+		1BA74E0B27626B9A00C05595 /* HistoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +66,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7C2CC9273B9EDA006555E8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B175B1D2743734700DA9383 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				1B175B1B2742199A00DA9383 /* Calculator.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		1B2920ED273E60D600A1EEFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B3FEE99274398D500C2678D /* ExtensionString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1B3D09F627301BDB008CA5F7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +108,104 @@
 		1B3D0A0127301BDB008CA5F7 /* Сalculator */ = {
 			isa = PBXGroup;
 			children = (
-				1B3D0A0227301BDB008CA5F7 /* AppDelegate.swift */,
-				1B3D0A0427301BDB008CA5F7 /* SceneDelegate.swift */,
-				1B3D0A0627301BDB008CA5F7 /* ViewController.swift */,
-				1B3D0A16273021E3008CA5F7 /* CustomButton.swift */,
-				1B3D0A0827301BDB008CA5F7 /* Main.storyboard */,
+				1B7C2CC5273B957C006555E8 /* Delegates */,
+				1B80C41127630F3A003E20C6 /* StartApp */,
+				1B3FEEC92747513500C2678D /* Data */,
+				1BA74E022762698800C05595 /* Models */,
+				1B611540273D17A0009DCDCA /* ViewControllers */,
+				1B175B1D2743734700DA9383 /* Calculator */,
+				1B7C2CC6273B959E006555E8 /* CustomObjects */,
+				1B2920ED273E60D600A1EEFC /* Extensions */,
 				1B3D0A0B27301BDD008CA5F7 /* Assets.xcassets */,
-				1B3D0A0D27301BDD008CA5F7 /* LaunchScreen.storyboard */,
 				1B3D0A1027301BDD008CA5F7 /* Info.plist */,
 			);
 			path = "Сalculator";
+			sourceTree = "<group>";
+		};
+		1B3FEEC82747511E00C2678D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1B3FEEC3274750DD00C2678D /* TableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1B3FEEC92747513500C2678D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B1BD98D2753F03200995DF1 /* DataManager.swift */,
+				1B8A39212755D407008339F8 /* CoreDataManager.swift */,
+				1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1B611540273D17A0009DCDCA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BA74DF827624F9A00C05595 /* CalculatorViewController */,
+				1BA74DF927624FCC00C05595 /* HistoryViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B7C2CC5273B957C006555E8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1B3D0A0227301BDB008CA5F7 /* AppDelegate.swift */,
+				1B3D0A0427301BDB008CA5F7 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		1B7C2CC6273B959E006555E8 /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				1B7C2CC3273B9574006555E8 /* CustomLabel.swift */,
+				1B3D0A16273021E3008CA5F7 /* CustomButton.swift */,
+			);
+			path = CustomObjects;
+			sourceTree = "<group>";
+		};
+		1B80C41127630F3A003E20C6 /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				1B3D0A0D27301BDD008CA5F7 /* LaunchScreen.storyboard */,
+			);
+			path = StartApp;
+			sourceTree = "<group>";
+		};
+		1BA74DF827624F9A00C05595 /* CalculatorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B3D0A0627301BDB008CA5F7 /* CalculatorViewController.swift */,
+				1BA74DFA2762503700C05595 /* CalculatorPresenter.swift */,
+				1BA74DFC2762504300C05595 /* CalculatorInteractor.swift */,
+				1BA74DFE2762505500C05595 /* CalculatorRouter.swift */,
+				1BA74E002762506300C05595 /* CalculatorConfigurator.swift */,
+			);
+			path = CalculatorViewController;
+			sourceTree = "<group>";
+		};
+		1BA74DF927624FCC00C05595 /* HistoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B0034B9274AC6B0003C4598 /* HistoryViewController.swift */,
+				1BA74E0527626B6A00C05595 /* HistoryPresenter.swift */,
+				1BA74E0727626B7400C05595 /* HistoryInteractor.swift */,
+				1BA74E0927626B8400C05595 /* HistoryRouter.swift */,
+				1BA74E0B27626B9A00C05595 /* HistoryConfigurator.swift */,
+				1B3FEEC82747511E00C2678D /* Cell */,
+			);
+			path = HistoryViewController;
+			sourceTree = "<group>";
+		};
+		1BA74E022762698800C05595 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BA74E03276269A200C05595 /* Section.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +224,9 @@
 			dependencies = (
 			);
 			name = "Сalculator";
+			packageProductDependencies = (
+				1B7C2CC8273B9EDA006555E8 /* SnapKit */,
+			);
 			productName = "Сalculator";
 			productReference = 1B3D09FF27301BDB008CA5F7 /* Сalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 1B3D09F627301BDB008CA5F7;
+			packageReferences = (
+				1B7C2CC7273B9EDA006555E8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1B3D0A0027301BDB008CA5F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +274,6 @@
 			files = (
 				1B3D0A0F27301BDD008CA5F7 /* LaunchScreen.storyboard in Resources */,
 				1B3D0A0C27301BDD008CA5F7 /* Assets.xcassets in Resources */,
-				1B3D0A0A27301BDB008CA5F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +284,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA74E04276269A200C05595 /* Section.swift in Sources */,
+				1BA74E0827626B7400C05595 /* HistoryInteractor.swift in Sources */,
+				1BA74E0627626B6A00C05595 /* HistoryPresenter.swift in Sources */,
+				1BA74DFD2762504300C05595 /* CalculatorInteractor.swift in Sources */,
 				1B3D0A17273021E3008CA5F7 /* CustomButton.swift in Sources */,
-				1B3D0A0727301BDB008CA5F7 /* ViewController.swift in Sources */,
+				1B175B1C2742199A00DA9383 /* Calculator.swift in Sources */,
+				1B7C2CC4273B9574006555E8 /* CustomLabel.swift in Sources */,
+				1BA74E012762506300C05595 /* CalculatorConfigurator.swift in Sources */,
+				1BA74DFF2762505500C05595 /* CalculatorRouter.swift in Sources */,
+				1BA74E0A27626B8400C05595 /* HistoryRouter.swift in Sources */,
+				1B3FEE9A274398D500C2678D /* ExtensionString.swift in Sources */,
+				1BA74DFB2762503700C05595 /* CalculatorPresenter.swift in Sources */,
+				1B8A39222755D407008339F8 /* CoreDataManager.swift in Sources */,
+				1B0034BA274AC6B0003C4598 /* HistoryViewController.swift in Sources */,
+				1B3FEEC6274750DD00C2678D /* TableViewCell.swift in Sources */,
+				1B1BD98E2753F03200995DF1 /* DataManager.swift in Sources */,
+				1B3D0A0727301BDB008CA5F7 /* CalculatorViewController.swift in Sources */,
 				1B3D0A0327301BDB008CA5F7 /* AppDelegate.swift in Sources */,
+				1B8A39252755DB80008339F8 /* DataModel.xcdatamodeld in Sources */,
+				1BA74E0C27626B9A00C05595 /* HistoryConfigurator.swift in Sources */,
 				1B3D0A0527301BDB008CA5F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +311,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1B3D0A0827301BDB008CA5F7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B3D0A0927301BDB008CA5F7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B3D0A0D27301BDD008CA5F7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,9 +450,11 @@
 				INFOPLIST_FILE = "Сalculator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,9 +480,11 @@
 				INFOPLIST_FILE = "Сalculator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,6 +520,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B7C2CC7273B9EDA006555E8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B7C2CC8273B9EDA006555E8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7C2CC7273B9EDA006555E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B8A39242755DB80008339F8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 1B8A39242755DB80008339F8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1B3D09F727301BDB008CA5F7 /* Project object */;
 }
