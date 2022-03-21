@@ -21,7 +21,7 @@
 		1B7C2CC4273B9574006555E8 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C2CC3273B9574006555E8 /* CustomLabel.swift */; };
 		1B7C2CC9273B9EDA006555E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7C2CC8273B9EDA006555E8 /* SnapKit */; };
 		1B8A39222755D407008339F8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39212755D407008339F8 /* CoreDataManager.swift */; };
-		1B8A39252755DB80008339F8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */; };
+		1BA4FA3627E8C02B00C7FFFA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */; };
 		1BA74DFB2762503700C05595 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFA2762503700C05595 /* CalculatorPresenter.swift */; };
 		1BA74DFD2762504300C05595 /* CalculatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFC2762504300C05595 /* CalculatorInteractor.swift */; };
 		1BA74DFF2762505500C05595 /* CalculatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA74DFE2762505500C05595 /* CalculatorRouter.swift */; };
@@ -287,6 +287,7 @@
 				1BA74E04276269A200C05595 /* Section.swift in Sources */,
 				1BA74E0827626B7400C05595 /* HistoryInteractor.swift in Sources */,
 				1BA74E0627626B6A00C05595 /* HistoryPresenter.swift in Sources */,
+				1BA4FA3627E8C02B00C7FFFA /* DataModel.xcdatamodeld in Sources */,
 				1BA74DFD2762504300C05595 /* CalculatorInteractor.swift in Sources */,
 				1B3D0A17273021E3008CA5F7 /* CustomButton.swift in Sources */,
 				1B175B1C2742199A00DA9383 /* Calculator.swift in Sources */,
@@ -302,7 +303,6 @@
 				1B1BD98E2753F03200995DF1 /* DataManager.swift in Sources */,
 				1B3D0A0727301BDB008CA5F7 /* CalculatorViewController.swift in Sources */,
 				1B3D0A0327301BDB008CA5F7 /* AppDelegate.swift in Sources */,
-				1B8A39252755DB80008339F8 /* DataModel.xcdatamodeld in Sources */,
 				1BA74E0C27626B9A00C05595 /* HistoryConfigurator.swift in Sources */,
 				1B3D0A0527301BDB008CA5F7 /* SceneDelegate.swift in Sources */,
 			);
