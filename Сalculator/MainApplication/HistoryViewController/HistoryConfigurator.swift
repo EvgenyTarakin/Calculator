@@ -24,4 +24,5 @@ class HistoryConfigurator {
         
         return view
     }
+    
 }

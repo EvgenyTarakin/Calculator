@@ -29,7 +29,6 @@ class CalculatorPresenter {
 }
 
 extension CalculatorPresenter: CalculatorViewToPresenterProtocol {
-    
     func didSelectNumberButton(_ number: CustomButton.TypeButton) {
         interactor.addNumber(number)
     }
@@ -53,13 +52,10 @@ extension CalculatorPresenter: CalculatorViewToPresenterProtocol {
     func didSelectHistoryButton() {
         router.openHistoryVC()
     }
- 
 }
 
 extension CalculatorPresenter: CalculatorInteractorToPresenterProtocol {
-    
     func didFinishUpdateCheckLabel(_ text: String) {
         view.updateCheckLabel(text)
     }
-    
 }

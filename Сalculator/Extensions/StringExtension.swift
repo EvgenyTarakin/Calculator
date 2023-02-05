@@ -11,6 +11,7 @@ extension String {
     var textFormatting: String {
         return self.removeLastZero.replacingDotWithPoint
     }
+    
     private var removeLastZero: String {
         let splitValue = self.split(separator: ".")
         if splitValue.count > 1 && splitValue[1] == "0" {
@@ -19,6 +20,7 @@ extension String {
             return self
         }
     }
+    
     private var replacingDotWithPoint: String {
         return self.replacingOccurrences(of: ".", with: ",")
     }
@@ -26,6 +28,7 @@ extension String {
     var DoubleFormatting: String {
         return self.replacingPointWithDot
     }
+    
     private var replacingPointWithDot: String {
         return self.replacingOccurrences(of: ",", with: ".")
     }

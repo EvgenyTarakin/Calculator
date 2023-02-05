@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+// MARK: - protocols
 protocol CalculatorPresenterToViewProtocol: AnyObject {
     func updateCheckLabel(_ text: String)
 }
@@ -18,32 +19,9 @@ protocol CalculatorRouterToViewProtocol: AnyObject {
 
 class CalculatorViewController: UIViewController {
     
-    // MARK: Пропети HistoryButton
-    private lazy var historyButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.text = nil
-        button.setImage(UIImage(systemName: "book"), for: .normal)
-        button.addTarget(self, action: #selector(openHistoryViewController), for: .touchUpInside)
-        return button
-    }()
+    // MARK: - property
+    var presenter: CalculatorViewToPresenterProtocol!
     
-    // MARK: Пропети СheckLabel
-    private lazy var checkLabel: CustomLabel = {
-        let label = CustomLabel()
-        label.text = "0"
-        return label
-    }()
-    
-    // MARK: Пропети StackViews
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
-    
-    // MARK: Массив типов кнопок
     private var arrayTypeButtons: [[CustomButton.TypeButton]] = [
         [.deletionState1, .invertion, .percent, .division],
         [.seven, .eight, .nine, .multiplication],
@@ -51,18 +29,42 @@ class CalculatorViewController: UIViewController {
         [.one, .two, .three, .addition],
         [ .point, .receive]
     ]
+
+    private lazy var historyButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.text = nil
+        button.setImage(UIImage(systemName: "book"), for: .normal)
+        button.addTarget(self, action: #selector(openHistoryViewController), for: .touchUpInside)
+        
+        return button
+    }()
     
-    var presenter: CalculatorViewToPresenterProtocol!
+    private lazy var checkLabel: CustomLabel = {
+        let label = CustomLabel()
+        label.text = "0"
+        
+        return label
+    }()
     
-    // MARK: ViewController lifecyrcle
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        
+        return stackView
+    }()
+        
+    // MARK: - lifecyrcle ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        configurateObjects()
+        
+        commonInit()
     }
     
-    // MARK: Настройка объектов
-    private func configurateObjects() {
+//    MARK: - private func
+    private func commonInit() {
         view.addSubview(historyButton)
         view.addSubview(mainStackView)
         view.addSubview(checkLabel)
@@ -74,7 +76,7 @@ class CalculatorViewController: UIViewController {
         })
         
         mainStackView.snp.makeConstraints { make in
-            make.bottom.left.right.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.bottom.left.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(mainStackView.snp.width).multipliedBy(1.25)
         }
         
@@ -121,15 +123,15 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-    // MARK: Переход на HistoryViewController
+    // MARK: - obj-c
     @objc private func openHistoryViewController() {
         presenter.didSelectHistoryButton()        
     }
 
 }
 
+// MARK: - extensions
 extension CalculatorViewController: CustomButtonDelegate {
-    
     func addNumber(_ stringNumber: CustomButton.TypeButton) {
         presenter.didSelectNumberButton(stringNumber)
     }
@@ -149,21 +151,16 @@ extension CalculatorViewController: CustomButtonDelegate {
     func chooseAdditionalFunctional(_ additionalfunction: CustomButton.TypeButton) {
         presenter.didSelectAdditionalFunctionalButton(additionalfunction)
     }
-    
 }
 
 extension CalculatorViewController: CalculatorRouterToViewProtocol {
-    
     func pushHistoryVC(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }
 
 extension CalculatorViewController: CalculatorPresenterToViewProtocol {
-    
     func updateCheckLabel(_ text: String) {
         checkLabel.text = text
     }
-    
 }

@@ -24,7 +24,7 @@ class Calculator {
 
     func setNumber(stringNumber: CustomButton.TypeButton, text: String) -> String {
         var text = text
-        if text.isZero || newNumber == true {
+        if text.isZero || newNumber {
             text.removeAll()
             newNumber = false
         } else if text.isMinusZero {
@@ -39,16 +39,18 @@ class Calculator {
         } else {
             secondNumber = text.doubleText
         }
+        
         return text
     }
     
     func addPoint(_ text: String) -> String {
         var text = text
-        if !presencePoint {
+        if !presencePoint && newNumber {
             presencePoint.toggle()
             text.append(",")
             fullOperation.append(",")
         }
+        
         return text
     }
     
@@ -59,12 +61,14 @@ class Calculator {
             function = chooseFunction
             newNumber = true
             presencePoint = false
+            
             return text
         }
         function = chooseFunction
         fullOperation.append(function?.rawValue ?? "")
         newNumber = true
         presencePoint = false
+        
         return text
     }
     
@@ -84,8 +88,8 @@ class Calculator {
         }
         newNumber = true
         secondNumber = 0
-
         firstNumber = resault
+        
         return "\(resault)".textFormatting
     }
     
@@ -118,6 +122,7 @@ class Calculator {
         let text = getResault(text)
         dataManager.saveData(operations: fullOperation, resault: "= \(text)")
         clearOperations()
+        
         return text
     }
     

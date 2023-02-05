@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+// MARK: - protocol
 protocol CustomButtonDelegate: AnyObject {
     func addNumber(_ stringNumber: CustomButton.TypeButton)
     func addPoint()
@@ -18,6 +19,7 @@ protocol CustomButtonDelegate: AnyObject {
 
 class CustomButton: UIView {
    
+//    MARK: - TypeButton
     enum TypeButton: String, CaseIterable {
         case deletionState1 = "AC"
         case deletionState2 = "C"
@@ -75,13 +77,14 @@ class CustomButton: UIView {
         }
     }
     
-    // MARK: Проперти СustomButton
+    // MARK: - property
     private var typeButton: TypeButton?
 
     weak var delegate: CustomButtonDelegate?
     
     private let backView: UIView = {
         let view = UIView()
+        
         return view
     }()
     
@@ -89,6 +92,7 @@ class CustomButton: UIView {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
+        
         return label
     }()
     
@@ -98,11 +102,12 @@ class CustomButton: UIView {
         }
     }
     
-    let button: UIButton = {
+    private lazy var button: UIButton = {
         let button = UIButton()
         button.titleLabel?.text = nil
         button.backgroundColor = . clear
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        
         return button
     }()
     
@@ -115,11 +120,17 @@ class CustomButton: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
     }
     
-    // MARK: Добавление constraint'ов
-    func commonInit() {
+    override func layoutSubviews() {
+        layer.cornerRadius = frame.height / 2
+        backView.layer.cornerRadius = layer.cornerRadius
+        
+        clipsToBounds = true
+    }
+    
+    // MARK: - private func
+    private func commonInit() {
         guard let typeButton = typeButton else { return }
         
         backgroundColor = .white
@@ -145,34 +156,6 @@ class CustomButton: UIView {
         }
     }
     
-    override func layoutSubviews() {
-        layer.cornerRadius = frame.height / 2
-        backView.layer.cornerRadius = layer.cornerRadius
-        
-        clipsToBounds = true
-    }
-    
-    // MARK: Добавление действия СustomButton
-    @objc func tapButton() {
-        playAnimation()
-        
-        guard let typeButton = typeButton else { return }
-        switch typeButton {
-        case .point:
-            delegate?.addPoint()
-        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine:
-            delegate?.addNumber(typeButton)
-        case .receive:
-            delegate?.displayResault()
-        case .addition, .substraction, .multiplication, .division:
-            delegate?.chooseFunctional(typeButton)
-        case .deletionState1, .deletionState2, .invertion, .percent:
-            delegate?.chooseAdditionalFunctional(typeButton)
-        }
-        
-    }
-    
-    // MARK: Анимация при нажатии на CustomButton
     private func playAnimation() {
         let animation = CABasicAnimation(keyPath: "backgroundColor")
 
@@ -191,6 +174,24 @@ class CustomButton: UIView {
         animation.duration = 0.1
         animation.repeatCount = 1
         backView.layer.add(animation, forKey: "backgroundColor")
+    }
+    
+    // MARK: - obj-c
+    @objc private func tapButton() {
+        playAnimation()
+        guard let typeButton = typeButton else { return }
+        switch typeButton {
+        case .point:
+            delegate?.addPoint()
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine:
+            delegate?.addNumber(typeButton)
+        case .receive:
+            delegate?.displayResault()
+        case .addition, .substraction, .multiplication, .division:
+            delegate?.chooseFunctional(typeButton)
+        case .deletionState1, .deletionState2, .invertion, .percent:
+            delegate?.chooseAdditionalFunctional(typeButton)
+        }
     }
     
 }

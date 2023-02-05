@@ -18,10 +18,8 @@ class CalculatorRouter {
 }
 
 extension CalculatorRouter: CalculatorPresenterToRouterProtocol {
-    
     func openHistoryVC() {
         let historyViewController = HistoryConfigurator().configurate()
         view.pushHistoryVC(historyViewController)
     }
-    
 }

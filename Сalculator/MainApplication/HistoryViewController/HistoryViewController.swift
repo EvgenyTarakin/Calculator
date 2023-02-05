@@ -18,11 +18,14 @@ protocol HistoryRouterToViewProtocol: AnyObject {
 
 class HistoryViewController: UIViewController {
     
-    // MARK: Проперти HistoryViewController'а
+    // MARK: - property
+    var presenter: HistoryViewToPresenterProtocol!
+
     private lazy var backButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
         button.addTarget(self, action: #selector(comeBackCalculatorVC), for: .touchUpInside)
+        
         return button
     }()
     
@@ -30,37 +33,37 @@ class HistoryViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "trash"), for: .normal)
         button.addTarget(self, action: #selector(deleteHistory), for: .touchUpInside)
+        
         return button
     }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.estimatedRowHeight = 60
         tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         return tableView
     }()
-    
-    var presenter: HistoryViewToPresenterProtocol!
-    
+        
     private lazy var dataSource = UITableViewDiffableDataSource<Section, TableData>(tableView: tableView) { (tableView, indexPath, item) -> UITableViewCell? in
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseIdentifier, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         cell.configurate(item)
+        
         return cell
     }
     
-    // MARK: HistoryViewController lifecyrcle
+    // MARK: - lifecyrcle ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        configurateObjects()
+        commonInit()
         presenter.startLoadData()
     }
     
-    // MARK: Настройка объектов 
-    private func configurateObjects() {
+    // MARK: - private func
+    private func commonInit() {
         view.addSubview(backButton)
         view.addSubview(deleteButton)
         view.addSubview(tableView)
@@ -83,12 +86,11 @@ class HistoryViewController: UIViewController {
         }
     }
     
-    //MARK: Функция удаления данных таблицы
+    //MARK: - obj-c
     @objc private func deleteHistory() {
         presenter.didSelectDeleteButton()
     }
     
-    //MARK: Возвращение на СalculatorViewController
     @objc private func comeBackCalculatorVC() {
         presenter.didSelectBackButton()
     }
@@ -96,15 +98,12 @@ class HistoryViewController: UIViewController {
 }
 
 extension HistoryViewController: HistoryRouterToViewProtocol {
-    
     func popCalculatorVC() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 extension HistoryViewController: HistoryPresenterToViewProtocol {
-    
     func updateTable(_ data: [TableData]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, TableData>()
         snapshot.appendSections([.main])
@@ -113,7 +112,4 @@ extension HistoryViewController: HistoryPresenterToViewProtocol {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
-    
 }
-
-

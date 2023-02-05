@@ -18,9 +18,7 @@ class HistoryRouter {
 }
 
 extension HistoryRouter: HistoryPresenterToRouterProtocol {
-
     func comeBackCalculatorVC() {
         view.popCalculatorVC()
     }
-
 }

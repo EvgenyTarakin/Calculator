@@ -26,8 +26,6 @@ class HistoryPresenter {
 }
 
 extension HistoryPresenter: HistoryViewToPresenterProtocol {
-    
-
     func didSelectBackButton() {
         router.comeBackCalculatorVC()
     }
@@ -42,11 +40,7 @@ extension HistoryPresenter: HistoryViewToPresenterProtocol {
 }
 
 extension HistoryPresenter: HistoryInteractorToPresenterProtocol {
-    
     func didFinishUpdateData(_ data: [TableData]) {
         view.updateTable(data)
     }
-    
 }
-
-

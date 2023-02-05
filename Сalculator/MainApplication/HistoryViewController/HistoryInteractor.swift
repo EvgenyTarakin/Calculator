@@ -21,7 +21,6 @@ class HistoryInteractor {
 }
 
 extension HistoryInteractor: HistoryPresenterToInteractorProtocol {
-    
     func loadData() {
         presenter.didFinishUpdateData(dataManager.tableDatas)
     }
@@ -30,5 +29,4 @@ extension HistoryInteractor: HistoryPresenterToInteractorProtocol {
         dataManager.deleteDatas()
         presenter.didFinishUpdateData(dataManager.tableDatas)
     }
-    
 }

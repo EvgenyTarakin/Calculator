@@ -8,7 +8,6 @@
 import UIKit
 
 protocol CalculatorPresenterToInteractorProtocol: AnyObject {
-    var textLabel: String { get }
     func addNumber(_ number: CustomButton.TypeButton)
     func addPoint()
     func addFunctional(_ functional: CustomButton.TypeButton)
@@ -25,11 +24,6 @@ class CalculatorInteractor {
 }
 
 extension CalculatorInteractor: CalculatorPresenterToInteractorProtocol {
-    
-    var textLabel: String {
-        return checkLabelText
-    }
-
     func addNumber(_ number: CustomButton.TypeButton) {
         checkLabelText = calculator.setNumber(stringNumber: number, text: checkLabelText)
         presenter.didFinishUpdateCheckLabel(checkLabelText)
@@ -54,5 +48,4 @@ extension CalculatorInteractor: CalculatorPresenterToInteractorProtocol {
         checkLabelText = calculator.displayResault(checkLabelText)
         presenter.didFinishUpdateCheckLabel(checkLabelText)
     }
-
 }

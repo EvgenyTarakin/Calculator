@@ -10,7 +10,7 @@ import SnapKit
 
 class CustomLabel: UIView {
     
-    // MARK: Проперти СustomLabel
+    // MARK: - property
     var text: String? {
         didSet {
             label.text = text
@@ -23,26 +23,29 @@ class CustomLabel: UIView {
         label.textColor = .white
         label.textAlignment = .right
         label.adjustsFontSizeToFitWidth = true
+        
         return label
     }()
     
     private var view: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
+        
         return view
     }()
     
-    // MARK: Инициализация СustomLabel
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    // MARK: Добавление constraint'ов
-    override func layoutSubviews() {
+//    MARK: - private func
+    private func commonInit() {
         addSubview(label)
         addSubview(view)
         
@@ -51,7 +54,7 @@ class CustomLabel: UIView {
         }
         view.snp.makeConstraints { make in
             make.top.bottom.left.right.equalToSuperview()
-        }  
+        }
     }
     
 }
