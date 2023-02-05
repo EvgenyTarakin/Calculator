@@ -8,11 +8,11 @@
 import UIKit
 
 protocol CalculatorViewToPresenterProtocol: AnyObject {
-    func didSelectNumberButton(_ number: CustomButton.TypeButton)
+    func didSelectNumberButton(_ number: AppButton.TypeButton)
     func didSelectPointButton()
     func didSelectResaultButton()
-    func didSelectFunctionButton(_ functional: CustomButton.TypeButton)
-    func didSelectAdditionalFunctionalButton(_ additionalFunctional: CustomButton.TypeButton)
+    func didSelectFunctionButton(_ functional: AppButton.TypeButton)
+    func didSelectAdditionalFunctionalButton(_ additionalFunctional: AppButton.TypeButton)
     func didSelectHistoryButton()
 }
 
@@ -29,7 +29,7 @@ class CalculatorPresenter {
 }
 
 extension CalculatorPresenter: CalculatorViewToPresenterProtocol {
-    func didSelectNumberButton(_ number: CustomButton.TypeButton) {
+    func didSelectNumberButton(_ number: AppButton.TypeButton) {
         interactor.addNumber(number)
     }
     
@@ -41,11 +41,11 @@ extension CalculatorPresenter: CalculatorViewToPresenterProtocol {
         interactor.loadResault()
     }
     
-    func didSelectFunctionButton(_ functional: CustomButton.TypeButton) {
+    func didSelectFunctionButton(_ functional: AppButton.TypeButton) {
         interactor.addFunctional(functional)
     }
     
-    func didSelectAdditionalFunctionalButton(_ additionalFunctional: CustomButton.TypeButton) {
+    func didSelectAdditionalFunctionalButton(_ additionalFunctional: AppButton.TypeButton) {
         interactor.addAdditionalFunctional(additionalFunctional)
     }
 

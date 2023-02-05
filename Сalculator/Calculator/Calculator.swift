@@ -5,28 +5,29 @@
 //  Created by Евгений Таракин on 15.11.2021.
 //
 
-import UIKit
+import Foundation
 
 class Calculator {
     
-    // MARK: Проперти калькулятора
+    // MARK: - property
     private var firstNumber: Double = 0
     private var secondNumber: Double = 0
     private var resault: Double = 0
-    private var function: CustomButton.TypeButton?
-    private var additionalFunction: CustomButton.TypeButton?
     
-    private var newNumber = false
+    private var function: AppButton.TypeButton?
+    private var additionalFunction: AppButton.TypeButton?
+    
+    private var isNewNumber = false
     private var presencePoint = false
     
     private var fullOperation: String = ""
     private var dataManager = DataManager()
 
-    func setNumber(stringNumber: CustomButton.TypeButton, text: String) -> String {
+    func setNumber(stringNumber: AppButton.TypeButton, text: String) -> String {
         var text = text
-        if text.isZero || newNumber {
+        if text.isZero || isNewNumber {
             text.removeAll()
-            newNumber = false
+            isNewNumber = false
         } else if text.isMinusZero {
             text = "-"
         }
@@ -45,7 +46,7 @@ class Calculator {
     
     func addPoint(_ text: String) -> String {
         var text = text
-        if !presencePoint && newNumber {
+        if !presencePoint && isNewNumber {
             presencePoint.toggle()
             text.append(",")
             fullOperation.append(",")
@@ -54,19 +55,19 @@ class Calculator {
         return text
     }
     
-    func chooseFunction(chooseFunction: CustomButton.TypeButton, text: String) -> String {
+    func chooseFunction(chooseFunction: AppButton.TypeButton, text: String) -> String {
         if function != nil {
             let text = getResault(text)
             fullOperation.append(function?.rawValue ?? "")
             function = chooseFunction
-            newNumber = true
+            isNewNumber = true
             presencePoint = false
             
             return text
         }
         function = chooseFunction
         fullOperation.append(function?.rawValue ?? "")
-        newNumber = true
+        isNewNumber = true
         presencePoint = false
         
         return text
@@ -86,7 +87,7 @@ class Calculator {
         default:
             break
         }
-        newNumber = true
+        isNewNumber = true
         secondNumber = 0
         firstNumber = resault
         
@@ -94,7 +95,7 @@ class Calculator {
     }
     
     // MARK: Получение результата при нажатии дополнительных функций
-    func chooseAdditionalFunction(chooseAdditionalFunctional: CustomButton.TypeButton, text: String) -> String {
+    func chooseAdditionalFunction(chooseAdditionalFunctional: AppButton.TypeButton, text: String) -> String {
         firstNumber = text.doubleText
         additionalFunction = chooseAdditionalFunctional
         
@@ -103,13 +104,13 @@ class Calculator {
             firstNumber *= -1
         case .percent:
             firstNumber /= 100
-        case .deletionState1:
+        case .deletion:
             firstNumber = 0
             secondNumber = 0
             resault = 0
             function = nil
             additionalFunction = nil
-            newNumber = false
+            isNewNumber = false
             presencePoint = false
         default:
             break
@@ -132,7 +133,7 @@ class Calculator {
         resault = 0
         function = nil
         additionalFunction = nil
-        newNumber = true
+        isNewNumber = true
         presencePoint = false
         fullOperation = ""
     }

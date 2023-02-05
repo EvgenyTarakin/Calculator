@@ -22,8 +22,8 @@ class CalculatorViewController: UIViewController {
     // MARK: - property
     var presenter: CalculatorViewToPresenterProtocol!
     
-    private var arrayTypeButtons: [[CustomButton.TypeButton]] = [
-        [.deletionState1, .invertion, .percent, .division],
+    private var arrayTypeButtons: [[AppButton.TypeButton]] = [
+        [.deletion, .invertion, .percent, .division],
         [.seven, .eight, .nine, .multiplication],
         [.four, .five, .six, .substraction],
         [.one, .two, .three, .addition],
@@ -39,8 +39,8 @@ class CalculatorViewController: UIViewController {
         return button
     }()
     
-    private lazy var checkLabel: CustomLabel = {
-        let label = CustomLabel()
+    private lazy var checkLabel: AppLabel = {
+        let label = AppLabel()
         label.text = "0"
         
         return label
@@ -93,7 +93,7 @@ class CalculatorViewController: UIViewController {
             newStackView.spacing = 10
             
             if item == arrayTypeButtons.last {
-                let zeroButton = CustomButton(frame: .zero, typeButton: .zero)
+                let zeroButton = AppButton(frame: .zero, typeButton: .zero)
                 zeroButton.delegate = self
                 newStackView.addArrangedSubview(zeroButton)
                 
@@ -106,14 +106,14 @@ class CalculatorViewController: UIViewController {
                 newStackView.addArrangedSubview(pointAndReceiveStackView)
                 
                 for button in item {
-                    let customButton = CustomButton(frame: .zero, typeButton: button)
+                    let customButton = AppButton(frame: .zero, typeButton: button)
                     customButton.delegate = self
                     pointAndReceiveStackView.addArrangedSubview(customButton)
                 }
                 
             } else {
                 for button in item {
-                    let customButton = CustomButton(frame: .zero, typeButton: button)
+                    let customButton = AppButton(frame: .zero, typeButton: button)
                     customButton.delegate = self
                     newStackView.addArrangedSubview(customButton)
                 }
@@ -131,8 +131,8 @@ class CalculatorViewController: UIViewController {
 }
 
 // MARK: - extensions
-extension CalculatorViewController: CustomButtonDelegate {
-    func addNumber(_ stringNumber: CustomButton.TypeButton) {
+extension CalculatorViewController: AppButtonDelegate {
+    func addNumber(_ stringNumber: AppButton.TypeButton) {
         presenter.didSelectNumberButton(stringNumber)
     }
     
@@ -144,11 +144,11 @@ extension CalculatorViewController: CustomButtonDelegate {
         presenter.didSelectResaultButton()
     }
     
-    func chooseFunctional(_ function: CustomButton.TypeButton) {
+    func chooseFunctional(_ function: AppButton.TypeButton) {
         presenter.didSelectFunctionButton(function)
     }
 
-    func chooseAdditionalFunctional(_ additionalfunction: CustomButton.TypeButton) {
+    func chooseAdditionalFunctional(_ additionalfunction: AppButton.TypeButton) {
         presenter.didSelectAdditionalFunctionalButton(additionalfunction)
     }
 }

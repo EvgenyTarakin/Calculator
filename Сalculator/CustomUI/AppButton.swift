@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  AppButton.swift
 //  Сalculator
 //
 //  Created by Евгений Таракин on 01.11.2021.
@@ -9,20 +9,19 @@ import UIKit
 import SnapKit
 
 // MARK: - protocol
-protocol CustomButtonDelegate: AnyObject {
-    func addNumber(_ stringNumber: CustomButton.TypeButton)
+protocol AppButtonDelegate: AnyObject {
+    func addNumber(_ stringNumber: AppButton.TypeButton)
     func addPoint()
     func displayResault()
-    func chooseFunctional(_ function: CustomButton.TypeButton)
-    func chooseAdditionalFunctional(_ additionalfunction: CustomButton.TypeButton)
+    func chooseFunctional(_ function: AppButton.TypeButton)
+    func chooseAdditionalFunctional(_ additionalfunction: AppButton.TypeButton)
 }
 
-class CustomButton: UIView {
+class AppButton: UIView {
    
 //    MARK: - TypeButton
     enum TypeButton: String, CaseIterable {
-        case deletionState1 = "AC"
-        case deletionState2 = "C"
+        case deletion = "AC"
         
         case percent = "%"
         case invertion = "+/-"
@@ -51,7 +50,7 @@ class CustomButton: UIView {
             switch self {
             case .division, .multiplication, .substraction, .addition, .receive:
                 return .systemOrange
-            case .deletionState1, .deletionState2, .invertion, .percent:
+            case .deletion, .invertion, .percent:
                 return .systemGray
             default:
                 return .systemGray3
@@ -69,7 +68,7 @@ class CustomButton: UIView {
         
         var textColor: UIColor {
             switch self {
-            case .deletionState1, .deletionState2, .invertion, .percent:
+            case .deletion, .invertion, .percent:
                 return .black
             default:
                 return .white
@@ -80,7 +79,7 @@ class CustomButton: UIView {
     // MARK: - property
     private var typeButton: TypeButton?
 
-    weak var delegate: CustomButtonDelegate?
+    weak var delegate: AppButtonDelegate?
     
     private let backView: UIView = {
         let view = UIView()
@@ -163,7 +162,7 @@ class CustomButton: UIView {
         case .division, .multiplication, .substraction, .addition, .receive:
             animation.fromValue = UIColor.systemOrange.cgColor
             animation.toValue = UIColor.systemOrange.withAlphaComponent(0.3).cgColor
-        case .deletionState1, .invertion, .percent:
+        case .deletion, .invertion, .percent:
             animation.fromValue = UIColor.systemGray.cgColor
             animation.toValue = UIColor.systemGray.withAlphaComponent(0.7).cgColor
         default:
@@ -189,7 +188,7 @@ class CustomButton: UIView {
             delegate?.displayResault()
         case .addition, .substraction, .multiplication, .division:
             delegate?.chooseFunctional(typeButton)
-        case .deletionState1, .deletionState2, .invertion, .percent:
+        case .deletion, .invertion, .percent:
             delegate?.chooseAdditionalFunctional(typeButton)
         }
     }

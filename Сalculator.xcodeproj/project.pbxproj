@@ -14,10 +14,10 @@
 		1B3D0A0527301BDB008CA5F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0427301BDB008CA5F7 /* SceneDelegate.swift */; };
 		1B3D0A0727301BDB008CA5F7 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0627301BDB008CA5F7 /* CalculatorViewController.swift */; };
 		1B3D0A0F27301BDD008CA5F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3D0A0D27301BDD008CA5F7 /* LaunchScreen.storyboard */; };
-		1B3D0A17273021E3008CA5F7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A16273021E3008CA5F7 /* CustomButton.swift */; };
+		1B3D0A17273021E3008CA5F7 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3D0A16273021E3008CA5F7 /* AppButton.swift */; };
 		1B3FEE9A274398D500C2678D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FEE99274398D500C2678D /* StringExtension.swift */; };
 		1B3FEEC6274750DD00C2678D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FEEC3274750DD00C2678D /* TableViewCell.swift */; };
-		1B7C2CC4273B9574006555E8 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C2CC3273B9574006555E8 /* CustomLabel.swift */; };
+		1B7C2CC4273B9574006555E8 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7C2CC3273B9574006555E8 /* AppLabel.swift */; };
 		1B7C2CC9273B9EDA006555E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7C2CC8273B9EDA006555E8 /* SnapKit */; };
 		1B8A39222755D407008339F8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39212755D407008339F8 /* CoreDataManager.swift */; };
 		1BA4FA3627E8C02B00C7FFFA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B8A39232755DB80008339F8 /* DataModel.xcdatamodeld */; };
@@ -42,10 +42,10 @@
 		1B3D0A0627301BDB008CA5F7 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		1B3D0A0E27301BDD008CA5F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3D0A1027301BDD008CA5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B3D0A16273021E3008CA5F7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1B3D0A16273021E3008CA5F7 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1B3FEE99274398D500C2678D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1B3FEEC3274750DD00C2678D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		1B7C2CC3273B9574006555E8 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		1B7C2CC3273B9574006555E8 /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
 		1B8A39212755D407008339F8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1B8A39242755DB80008339F8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1BA74DFA2762503700C05595 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 		1B7C2CC6273B959E006555E8 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				1B7C2CC3273B9574006555E8 /* CustomLabel.swift */,
-				1B3D0A16273021E3008CA5F7 /* CustomButton.swift */,
+				1B7C2CC3273B9574006555E8 /* AppLabel.swift */,
+				1B3D0A16273021E3008CA5F7 /* AppButton.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -285,9 +285,9 @@
 				1BA74E0627626B6A00C05595 /* HistoryPresenter.swift in Sources */,
 				1BA4FA3627E8C02B00C7FFFA /* DataModel.xcdatamodeld in Sources */,
 				1BA74DFD2762504300C05595 /* CalculatorInteractor.swift in Sources */,
-				1B3D0A17273021E3008CA5F7 /* CustomButton.swift in Sources */,
+				1B3D0A17273021E3008CA5F7 /* AppButton.swift in Sources */,
 				1B175B1C2742199A00DA9383 /* Calculator.swift in Sources */,
-				1B7C2CC4273B9574006555E8 /* CustomLabel.swift in Sources */,
+				1B7C2CC4273B9574006555E8 /* AppLabel.swift in Sources */,
 				1BA74E012762506300C05595 /* CalculatorConfigurator.swift in Sources */,
 				1BA74DFF2762505500C05595 /* CalculatorRouter.swift in Sources */,
 				1BA74E0A27626B8400C05595 /* HistoryRouter.swift in Sources */,

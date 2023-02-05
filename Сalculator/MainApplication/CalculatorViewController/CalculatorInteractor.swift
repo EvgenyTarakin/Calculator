@@ -8,10 +8,10 @@
 import UIKit
 
 protocol CalculatorPresenterToInteractorProtocol: AnyObject {
-    func addNumber(_ number: CustomButton.TypeButton)
+    func addNumber(_ number: AppButton.TypeButton)
     func addPoint()
-    func addFunctional(_ functional: CustomButton.TypeButton)
-    func addAdditionalFunctional(_ additionalFunctional: CustomButton.TypeButton)
+    func addFunctional(_ functional: AppButton.TypeButton)
+    func addAdditionalFunctional(_ additionalFunctional: AppButton.TypeButton)
     func loadResault()
 }
 
@@ -19,33 +19,33 @@ class CalculatorInteractor {
     
     weak var presenter: CalculatorInteractorToPresenterProtocol!
     private var calculator = Calculator()
-    private var checkLabelText: String = "0"
+    private var textLabel: String = "0"
     
 }
 
 extension CalculatorInteractor: CalculatorPresenterToInteractorProtocol {
-    func addNumber(_ number: CustomButton.TypeButton) {
-        checkLabelText = calculator.setNumber(stringNumber: number, text: checkLabelText)
-        presenter.didFinishUpdateCheckLabel(checkLabelText)
+    func addNumber(_ number: AppButton.TypeButton) {
+        textLabel = calculator.setNumber(stringNumber: number, text: textLabel)
+        presenter.didFinishUpdateCheckLabel(textLabel)
     }
     
     func addPoint() {
-        checkLabelText = calculator.addPoint(checkLabelText)
-        presenter.didFinishUpdateCheckLabel(checkLabelText)
+        textLabel = calculator.addPoint(textLabel)
+        presenter.didFinishUpdateCheckLabel(textLabel)
     }
     
-    func addFunctional(_ functional: CustomButton.TypeButton) {
-        checkLabelText = calculator.chooseFunction(chooseFunction: functional, text: checkLabelText)
-        presenter.didFinishUpdateCheckLabel(checkLabelText)
+    func addFunctional(_ functional: AppButton.TypeButton) {
+        textLabel = calculator.chooseFunction(chooseFunction: functional, text: textLabel)
+        presenter.didFinishUpdateCheckLabel(textLabel)
     }
     
-    func addAdditionalFunctional(_ additionalFunctional: CustomButton.TypeButton) {
-        checkLabelText = calculator.chooseAdditionalFunction(chooseAdditionalFunctional: additionalFunctional, text: checkLabelText)
-        presenter.didFinishUpdateCheckLabel(checkLabelText)
+    func addAdditionalFunctional(_ additionalFunctional: AppButton.TypeButton) {
+        textLabel = calculator.chooseAdditionalFunction(chooseAdditionalFunctional: additionalFunctional, text: textLabel)
+        presenter.didFinishUpdateCheckLabel(textLabel)
     }
     
     func loadResault() {
-        checkLabelText = calculator.displayResault(checkLabelText)
-        presenter.didFinishUpdateCheckLabel(checkLabelText)
+        textLabel = calculator.displayResault(textLabel)
+        presenter.didFinishUpdateCheckLabel(textLabel)
     }
 }

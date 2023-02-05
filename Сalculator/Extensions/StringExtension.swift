@@ -12,6 +12,14 @@ extension String {
         return self.removeLastZero.replacingDotWithPoint
     }
     
+    var doubleFormatting: String {
+        return self.replacingPointWithDot
+    }
+    
+    var doubleText: Double {
+        return Double(self.doubleFormatting) ?? 0
+    }
+    
     private var removeLastZero: String {
         let splitValue = self.split(separator: ".")
         if splitValue.count > 1 && splitValue[1] == "0" {
@@ -25,16 +33,8 @@ extension String {
         return self.replacingOccurrences(of: ".", with: ",")
     }
     
-    var DoubleFormatting: String {
-        return self.replacingPointWithDot
-    }
-    
     private var replacingPointWithDot: String {
         return self.replacingOccurrences(of: ",", with: ".")
-    }
-    
-    var doubleText: Double {
-        return Double(self.DoubleFormatting) ?? 0
     }
     
     var isZero: Bool {

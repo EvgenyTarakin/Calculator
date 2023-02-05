@@ -1,5 +1,5 @@
 //
-//  CustomLabel.swift
+//  AppLabel.swift
 //  Сalculator
 //
 //  Created by Евгений Таракин on 10.11.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CustomLabel: UIView {
+class AppLabel: UIView {
     
     // MARK: - property
     var text: String? {
